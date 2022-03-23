@@ -1,6 +1,6 @@
 import React from 'react';
-import vibes from './static/vibes.gif';
 import text from './static/text.png';
+import Canvas from './components/canvas/canvas';
 
 import './App.scss';
 
@@ -12,7 +12,7 @@ const App = () => {
             <div className='container__header'></div>
             <div className='container__body'>
                 <div className='container__body-canvas'>
-                    <img src={vibes} alt="WTF" />
+                    <Canvas />
                 </div>
                 <div className='container__body-controls'>
                     <img src={text} alt="WTF" />

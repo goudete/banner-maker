@@ -1,8 +1,8 @@
 
 const format = {
-    width: 350,
-    height: 350,
-    smoothing: false,
+    WIDTH: 600,
+    HEIGHT: 200,
+    BACKGROUND_COLOR: "#3d3d3d",
 };
 
 const layerConfigurations = [
