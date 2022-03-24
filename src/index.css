@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("./static/background.png");
+  background-image: url("./static/general/background.png");
 }
 
 code {

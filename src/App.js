@@ -1,6 +1,6 @@
 import React from 'react';
-import text from './static/text.png';
 import Canvas from './components/canvas/canvas';
+import ControlPanel from './components/controlPanel/controlPanel';
 
 import './App.scss';
 
@@ -15,7 +15,7 @@ const App = () => {
                     <Canvas />
                 </div>
                 <div className='container__body-controls'>
-                    <img src={text} alt="WTF" />
+                    <ControlPanel />
                 </div>
             </div>
             <div className='container__footer'></div>
