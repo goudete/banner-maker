@@ -1,21 +1,23 @@
 import React from 'react';
 
-const { layers } = require('../../config')
+const { layers } = require('../../config.ts')
 
 const ControlPanel = () => {
     /*
-
     in charge of:
         - displaying loaded images
-        - 
+        - modifying selectedLayers object
 
     */
 
-   const selectImage = () => {};
+
+    // this function modifies the selectedLayers object
+    // const selectImage = () => {};
 
 
     return <div>
-        {layers.length > 0 ? layers.map((img) => <image src={img.path} />) : ''}
+        {/* need to render images by layer */}
+        {layers.map((img) => <image src={img.path} />)}
     </div>
 }
 

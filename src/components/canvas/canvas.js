@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-const { format, layers, loadedImages } = require('../../config');
+const { format, selectedLayers } = require('../../config.ts');
 
 
 const Canvas = () => {
@@ -11,46 +11,38 @@ const Canvas = () => {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
 
-        context.fillStyle = format.BACKGROUND_COLOR;
+        context.fillStyle = format.backgroundColor;
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     };
 
     const drawElements = () => {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
-        
-        layers.forEach((layer) => {
+
+        selectedLayers.forEach((layer) => {
             drawElement(context, layer);
         });
     };
 
     const drawElement = async (context, layer) => {
+        const img = new Image();
+        img.src = layer.path;
+
         context.drawImage(
-            layer.loadedImage,
+            img,
             0,
             0,
-            format.WIDTH,
-            format.HEIGHT
+            format.width,
+            format.height
         );
     }
 
     useEffect(() => {
         drawBackground();
         // drawElements();
-        console.log('loadedImages:', loadedImages)
-    }, [loadedImages]);
+    }, [selectedLayers]);
 
-    return <canvas ref={canvasRef} width={format.WIDTH} height={format.HEIGHT} />
+    return <canvas ref={canvasRef} width={format.width} height={format.height} />
 }
 
 export default Canvas;
-
-
-
-
-// const saveImage = () => {
-//     fs.writeFileSync(
-//         `${buildDir}/images/banner.png`,
-//         canvas.toBuffer("image/png")
-//     );
-// };
