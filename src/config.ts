@@ -8,7 +8,7 @@ const format: Format = {
 
 const layers: Layer[] = [
     {
-        layer: "head",
+        layerName: "head",
         images: [
             {
                 name: "Head",
@@ -21,7 +21,7 @@ const layers: Layer[] = [
         ]
     },
     {
-        layer: "torso",
+        layerName: "torso",
         images: [
             {
                 name: "Mc_Shirt",
@@ -34,7 +34,7 @@ const layers: Layer[] = [
         ]
     },
     {
-        layer: "arms",
+        layerName: "arms",
         images: [
             {
                 name: "Tentacle_Arms",
@@ -47,7 +47,7 @@ const layers: Layer[] = [
         ]
     },
     {
-        layer: "mouth",
+        layerName: "mouth",
         images: [
             {
                 name: "Filler_Lips",
@@ -60,7 +60,7 @@ const layers: Layer[] = [
         ]
     },
     {
-        layer: "eyes",
+        layerName: "eyes",
         images: [
             {
                 name: "High_Eyes",
@@ -73,7 +73,7 @@ const layers: Layer[] = [
         ]
     },
     {
-        layer: "noses",
+        layerName: "noses",
         images: [
             {
                 name: "Beak",

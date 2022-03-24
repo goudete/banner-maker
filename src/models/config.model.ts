@@ -6,7 +6,7 @@ export interface Format {
 }
 
 export interface Layer {
-    layer: string;
+    layerName: string;
     images: Image[]
 }
 

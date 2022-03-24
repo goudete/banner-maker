@@ -18,7 +18,7 @@ const ControlPanel = () => {
     return <div>
         {/* need to render images by layer */}
         {layers.map((img) => <image src={img.path} />)}
-    </div>
+    </div>;
 }
 
 export default ControlPanel;

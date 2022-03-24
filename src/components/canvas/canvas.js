@@ -40,9 +40,9 @@ const Canvas = () => {
     useEffect(() => {
         drawBackground();
         // drawElements();
-    }, [selectedLayers]);
+    }, []);
 
-    return <canvas ref={canvasRef} width={format.width} height={format.height} />
+    return <canvas ref={canvasRef} width={format.width} height={format.height} />;
 }
 
 export default Canvas;
