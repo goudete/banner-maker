@@ -12,10 +12,8 @@ export interface Layer {
 
 export interface Image {
     name: string;
-    path: string;
 }
 
 export interface SelectedLayer {
     layerName: string;
-    image: Image;
 }

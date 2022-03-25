@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-const { format, selectedLayers } = require('../../config.ts');
-
+import { format, selectedLayers } from '../../config.ts';
 
 const Canvas = () => {
 

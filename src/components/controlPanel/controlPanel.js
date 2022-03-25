@@ -1,6 +1,5 @@
 import React from 'react';
-
-const { layers } = require('../../config.ts')
+import { layers, format } from '../../config.ts';
 
 const ControlPanel = () => {
     /*
@@ -14,10 +13,20 @@ const ControlPanel = () => {
     // this function modifies the selectedLayers object
     // const selectImage = () => {};
 
+    const images = layers.map((layer) => {
+        return layer?.images.map((img) => (
+            <img
+                key={img.name}
+                alt={`${img.name}`}
+                src={require(`../../static/layers/${layer.layerName}/${img.name}.png`)}
+                width={format.width}
+                height={format.height}
+            />
+        ));
+    });
 
     return <div>
-        {/* need to render images by layer */}
-        {layers.map((img) => <image src={img.path} />)}
+        {images}
     </div>;
 }
 
