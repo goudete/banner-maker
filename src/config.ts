@@ -33,7 +33,44 @@ const layers: Layer[] = [
     }
 ];
 
-const selectedLayers: SelectedLayer[] = [];
+// class SelectedLayers {
+//     constructor() {
+
+//     }
+//     get selectedLayers() {
+//         return ''
+//     }
+
+//     set selectedLayers({layer, image}) {
+
+//     }
+// }
+let selectedLayers: SelectedLayer[] = [
+    {
+        layerName: "head",
+        imageName: ""
+    },
+    {
+        layerName: "torso",
+        imageName: ""
+    },
+    {
+        layerName: "arms",
+        imageName: ""
+    },
+    {
+        layerName: "mouths",
+        imageName: ""
+    },
+    {
+        layerName: "eyes",
+        imageName: ""
+    },
+    {
+        layerName: "noses",
+        imageName: ""
+    }
+];
 
 export {
     format,
