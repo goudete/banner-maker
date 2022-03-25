@@ -1,8 +1,8 @@
 import { Format, Layer, SelectedLayer } from './models/config.model';
 
 const format: Format = {
-    width: 350,
-    height: 350,
+    width: 250,
+    height: 250,
     backgroundColor: "#3d3d3d",
 };
 

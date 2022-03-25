@@ -16,4 +16,5 @@ export interface Image {
 
 export interface SelectedLayer {
     layerName: string;
+    imageName: string;
 }
