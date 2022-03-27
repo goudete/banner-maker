@@ -1,9 +1,8 @@
-
 import React, { useEffect, useRef } from "react";
 import { format } from '../../config.ts';
 
-const Canvas = () => {
-
+const Canvas = (props) => {
+    const { selectedLayers } = props;
     const canvasRef = useRef(null);
 
     const drawBackground = () => {
@@ -14,32 +13,38 @@ const Canvas = () => {
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     };
 
-    const drawElements = () => {
+    const drawElements = async () => {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
 
-        // selectedLayers.forEach((layer) => {
-        //     drawElement(context, layer);
-        // });
+        selectedLayers.forEach((layer) => {
+            console.log('layer:', layer)
+            drawElement(context, layer);
+        });
     };
 
-    const drawElement = async (context, layer) => {
-        const img = new Image();
-        img.src = layer.path;
-
-        context.drawImage(
-            img,
-            0,
-            0,
-            format.width,
-            format.height
-        );
+    const drawElement = (context, layer) => {
+        if (layer.imageName) {
+            console.log(`../../static/layers/${layer.layerName}/${layer.imageName}.png`)
+            const img = new Image();
+            img.src = require(`../../static/layers/${layer.layerName}/${layer.imageName}.png`);
+    
+            img.onload = function () {
+                context.drawImage(
+                    img,
+                    0,
+                    0,
+                    format.width,
+                    format.height
+                );
+            }
+        }
     }
 
     useEffect(() => {
         drawBackground();
-        // drawElements();
-    }, []);
+        drawElements();
+    }, [selectedLayers]);
 
     return <canvas ref={canvasRef} width={format.width} height={format.height} />;
 }

@@ -3,7 +3,7 @@ import { Format, Layer } from './models/config.model';
 const format: Format = {
     width: 250,
     height: 250,
-    backgroundColor: "#3d3d3d",
+    backgroundColor: "#FFFFFF",
 };
 
 const layers: Layer[] = [
