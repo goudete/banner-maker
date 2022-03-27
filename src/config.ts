@@ -1,4 +1,4 @@
-import { Format, Layer, SelectedLayer } from './models/config.model';
+import { Format, Layer } from './models/config.model';
 
 const format: Format = {
     width: 250,
@@ -33,47 +33,7 @@ const layers: Layer[] = [
     }
 ];
 
-// class SelectedLayers {
-//     constructor() {
-
-//     }
-//     get selectedLayers() {
-//         return ''
-//     }
-
-//     set selectedLayers({layer, image}) {
-
-//     }
-// }
-let selectedLayers: SelectedLayer[] = [
-    {
-        layerName: "head",
-        imageName: ""
-    },
-    {
-        layerName: "torso",
-        imageName: ""
-    },
-    {
-        layerName: "arms",
-        imageName: ""
-    },
-    {
-        layerName: "mouths",
-        imageName: ""
-    },
-    {
-        layerName: "eyes",
-        imageName: ""
-    },
-    {
-        layerName: "noses",
-        imageName: ""
-    }
-];
-
 export {
     format,
-    layers,
-    selectedLayers
+    layers
 }

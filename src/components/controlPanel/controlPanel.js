@@ -1,26 +1,20 @@
 import React from 'react';
-import { layers, format, selectedLayers } from '../../config.ts';
+import { layers, format } from '../../config.ts';
 
 import './controlPanel.scss'
 
-const ControlPanel = () => {
-    /*
-    in charge of:
-        - modifying selectedLayers object
-    */
+const ControlPanel = (props) => {
+    const { selectedLayers, setSelectedLayers } = props;
 
     const onImageSelection = (layer, image) => {
-        console.log(layer, image)
-        console.log('PRE MOD:',selectedLayers)
-
-        let copy = [...selectedLayers];
-        const newSelectedLayers = copy.map((currLayer) => {
-            if (currLayer.layerName === layer) {
-                currLayer.imageName = image
+        const newSelectedLayers = selectedLayers.map((currLayer) => (
+            {
+                layerName: currLayer.layerName,
+                imageName: currLayer.layerName === layer ? image : currLayer.imageName
             }
-        });
-        selectedLayers = newSelectedLayers;
-        console.log('POST MOD:', selectedLayers)
+        ));
+
+        setSelectedLayers(newSelectedLayers);
     };
 
     const images = layers.map((layer) => {

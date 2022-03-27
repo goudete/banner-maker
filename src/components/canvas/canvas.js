@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-import { format, selectedLayers } from '../../config.ts';
+import { format } from '../../config.ts';
 
 const Canvas = () => {
 
@@ -18,9 +18,9 @@ const Canvas = () => {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
 
-        selectedLayers.forEach((layer) => {
-            drawElement(context, layer);
-        });
+        // selectedLayers.forEach((layer) => {
+        //     drawElement(context, layer);
+        // });
     };
 
     const drawElement = async (context, layer) => {
