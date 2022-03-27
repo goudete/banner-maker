@@ -1,4 +1,10 @@
 
-.layerImage {
-    cursor: pointer;
+.layers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__layerImage {
+        cursor: pointer;
+    }
 }

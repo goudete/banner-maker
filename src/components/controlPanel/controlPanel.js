@@ -19,7 +19,7 @@ const ControlPanel = (props) => {
 
     const images = layers.map((layer) => {
         return layer?.images.map((img) => (
-            <div key={img.name} className='layerImage'>
+            <div key={img.name} className='layers__layerImage'>
                 <img
                     alt={img.name}
                     src={require(`../../static/layers/${layer.layerName}/${img.name}.png`)}
@@ -31,7 +31,7 @@ const ControlPanel = (props) => {
         ));
     });
 
-    return <div>
+    return <div className='layers'>
         {images}
     </div>;
 }

@@ -18,14 +18,12 @@ const Canvas = (props) => {
         const context = canvas.getContext('2d');
 
         selectedLayers.forEach((layer) => {
-            console.log('layer:', layer)
             drawElement(context, layer);
         });
     };
 
     const drawElement = (context, layer) => {
         if (layer.imageName) {
-            console.log(`../../static/layers/${layer.layerName}/${layer.imageName}.png`)
             const img = new Image();
             img.src = require(`../../static/layers/${layer.layerName}/${layer.imageName}.png`);
     
